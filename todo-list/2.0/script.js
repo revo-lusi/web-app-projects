@@ -57,6 +57,8 @@ document.body.addEventListener("keyup", (e) => {
         inputTask.value = "";
       }
     }
+  } else if (inputTask.value == "" && e.key === "Enter") {
+    errInputMsg.classList.add("active");
   }
 });
 
@@ -140,3 +142,5 @@ function escapeHtml(unsafe) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+
+// Draft: Tombol Hapus Semua & Tandai Semua
