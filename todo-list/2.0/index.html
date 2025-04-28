@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List (v2.0)</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title" class="title">Todo List (v2.0)</h1>
+
+      <!-- ADD TASK start -->
+      <div class="add-task">
+        <input
+          type="text"
+          placeholder="Masukkan Tugas..."
+          autocomplete="off"
+          autofocus
+        />
+        <button>Tambahkan Tugas!</button>
+      </div>
+      <p class="err-input-msg">Silahkan isi tugas terlebih dahulu!</p>
+      <!-- ADD TASK end -->
+
+      <!-- TASKS CONTAINER start -->
+      <div class="tasks-container" id="tasks-container">
+        <!-- <div class="task">
+          <input type="checkbox" class="check-task" />
+          <span>Teskasdfasdfs</span>
+          <button class="edit-task"><i data-feather="edit"></i></button>
+          <button class="delete-task"><i data-feather="x"></i></button>
+        </div> -->
+      </div>
+      <!-- TASKS CONTAINER end -->
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

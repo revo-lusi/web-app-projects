@@ -1,0 +1,220 @@
+/* CSS Reset */
+
+:root {
+  --mainColor: #fff;
+  --bg: #18047c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: var(--mainColor);
+}
+
+body {
+  background-color: var(--bg);
+}
+
+/* Input Form Style */
+
+.container {
+  width: 50%;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  margin: 0 auto 30px;
+}
+
+.container #input-task-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.container #input-task-form input {
+  flex: 10;
+  padding: 10px;
+  color: var(--bg);
+}
+
+.container .add-task-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  flex: 1;
+  background-color: var(--bg);
+  transition: 0.3s;
+}
+
+.container .add-task-button:hover {
+  color: var(--bg);
+  background-color: var(--mainColor);
+  cursor: pointer;
+  box-shadow: 0 0 10px 3px #fff;
+}
+
+/* Task Style */
+
+.container .container-task {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px auto 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-size: 30px;
+}
+
+.container .container-task .task {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.container .container-task .task:hover {
+  box-shadow: 0 0 5px 7px #fff;
+}
+
+.container .container-task .task > span {
+  width: 100px;
+  padding-left: 10px;
+  overflow-wrap: break-word;
+  flex: 1;
+}
+
+.container .container-task .task .check-task {
+  width: 30px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.container .container-task .task .delete-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.container .container-task .task .delete-task:hover {
+  background-color: #fff;
+}
+
+.container .container-task .task .delete-task:hover > span {
+  color: var(--bg);
+}
+
+.container .container-task .task.checked > span {
+  text-decoration: line-through;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1336px) {
+  .title {
+    font-size: 30px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .container .container-task .task {
+    font-size: 20px;
+  }
+
+  .container .container-task .task > span {
+    padding-left: 10px;
+    flex: 1;
+  }
+
+  .container .container-task .task .check-task {
+    width: 25px;
+  }
+
+  .container .container-task .task .delete-task {
+    width: 15px;
+    height: 15px;
+    line-height: 10px;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .container #input-task-form input {
+    flex: 5;
+    padding: 5px;
+    font-size: 11px;
+  }
+
+  .container #input-task-form .add-task-button {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .container .container-task {
+    margin-top: 0;
+  }
+
+  .container .container-task .task {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .container .container-task .task > span {
+    flex: 1;
+  }
+
+  .container .container-task .task .check-task {
+    width: 22px;
+    height: 22px;
+  }
+
+  .container .container-task .task .delete-task {
+    width: 8px;
+    height: 8px;
+    line-height: 7px;
+    margin-left: 5px;
+  }
+}
