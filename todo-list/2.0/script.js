@@ -2,12 +2,12 @@ const addTaskBtn = document.querySelector(".add-task button"),
   inputTask = document.querySelector(".add-task input"),
   containerTask = document.getElementById("tasks-container"),
   errInputMsg = document.querySelector(".err-input-msg"),
-  getTasks = () => JSON.parse(localStorage.getItem("tasks"));
+  getTasks = () => JSON.parse(localStorage.getItem("tasks-v2.0"));
 
 // --- [Pengecekan Local Storage] ---
 // Jika user sudah pernah buat tugas, tambahkan tugas-tugas tsb ke layar)
-if (!localStorage.getItem("tasks")) {
-  localStorage.setItem("tasks", "[]");
+if (!localStorage.getItem("tasks-v2.0")) {
+  localStorage.setItem("tasks-v2.0", "[]");
 } else {
   getTasks().forEach((el) => {
     const newTaskBox = addTask(el.task);
@@ -33,7 +33,7 @@ addTaskBtn.addEventListener("click", () => {
     } else {
       addTask(newTaskValue);
       tasks.push({ task: newTaskValue, isChecked: false });
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      localStorage.setItem("tasks-v2.0", JSON.stringify(tasks));
       inputTask.value = "";
     }
   } else {
@@ -53,7 +53,7 @@ document.body.addEventListener("keyup", (e) => {
       } else {
         addTask(newTaskValue);
         tasks.push({ task: newTaskValue, isChecked: false });
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+        localStorage.setItem("tasks-v2.0", JSON.stringify(tasks));
         inputTask.value = "";
       }
     }
@@ -70,7 +70,7 @@ containerTask.addEventListener("click", (e) => {
     // Hapus Tugas [❌]
     if (confirm("⚠️ Apakah Anda yakin ingin menghapus tugas ini?")) {
       localStorage.setItem(
-        "tasks",
+        "tasks-v2.0",
         JSON.stringify(
           tasks.filter(
             (el) =>
@@ -102,7 +102,7 @@ containerTask.addEventListener("click", (e) => {
       });
     }
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks-v2.0", JSON.stringify(tasks));
   } else if (e.target.classList.contains("edit-task")) {
     // Tombol Edit [✏️]
     let newTask = prompt("ℹ️ Edit tugas ini:");
@@ -115,7 +115,7 @@ containerTask.addEventListener("click", (e) => {
           el.task = escapeHtml(newTask);
       });
       e.target.previousElementSibling.innerText = newTask;
-      localStorage.setItem("tasks", JSON.stringify(tasks));
+      localStorage.setItem("tasks-v2.0", JSON.stringify(tasks));
     }
   }
 });

@@ -4,10 +4,10 @@ const addTaskBtn = document.getElementById("add-task-button"),
 
 // Pengecekan Local Storage:
 // jika user sudah pernah buat task, tambahkan task-task tsb ke tampilan)
-if (!localStorage.getItem("tasks")) {
-  localStorage.setItem("tasks", "[]");
+if (!localStorage.getItem("tasks-v1.0")) {
+  localStorage.setItem("tasks-v1.0", "[]");
 } else {
-  JSON.parse(localStorage.getItem("tasks")).forEach((el) => {
+  JSON.parse(localStorage.getItem("tasks-v1.0")).forEach((el) => {
     const newTaskBox = addTask(el.task);
 
     if (el.isChecked) {
@@ -19,24 +19,24 @@ if (!localStorage.getItem("tasks")) {
 
 // Ketika tombol "Tambahkan" di klik
 addTaskBtn.addEventListener("click", function (e) {
-  let tasks = JSON.parse(localStorage.getItem("tasks"));
+  let tasks = JSON.parse(localStorage.getItem("tasks-v1.0"));
 
   if (inputTask.value !== "") {
     addTask(inputTask.value);
     tasks.push({ task: inputTask.value, isChecked: false });
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks-v1.0", JSON.stringify(tasks));
     inputTask.value = "";
   }
 });
 
 // Ketika tombol check & hapus task di klik
 containerTask.addEventListener("click", (e) => {
-  let tasks = JSON.parse(localStorage.getItem("tasks"));
+  let tasks = JSON.parse(localStorage.getItem("tasks-v1.0"));
   // Ketika tombol delete diklik
   if (e.target.classList.contains("delete-task")) {
     if (confirm("Apakah Anda yakin ingin menghapus tugas ini?")) {
       localStorage.setItem(
-        "tasks",
+        "tasks-v1.0",
         JSON.stringify(
           tasks.filter(
             (el) => el.task !== e.target.previousElementSibling.innerText
@@ -63,7 +63,7 @@ containerTask.addEventListener("click", (e) => {
       });
     }
 
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks-v1.0", JSON.stringify(tasks));
   }
 });
 
