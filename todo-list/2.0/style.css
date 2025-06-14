@@ -1,0 +1,261 @@
+/* CSS Reset */
+
+:root {
+  --textColor: #010101;
+  --bg: #97ddf2;
+  --bgSecondary: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+/* Input Form Style */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60%;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+.title {
+  color: var(--textColor);
+  text-align: center;
+  font-size: 40px;
+  margin: 0 auto 2rem;
+}
+
+/* Add Task Input */
+
+.add-task {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  height: 60px;
+  color: var(--bg);
+}
+
+.add-task input {
+  flex: 3;
+  padding: 5px 10px;
+  border: 1px solid var(--textColor);
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--textColor);
+}
+
+.add-task button {
+  flex: 1;
+  margin-left: 1rem;
+  padding: 5px;
+  border: 1px solid var(--textColor);
+  border-radius: 5px;
+  background-color: #027609;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bgSecondary);
+  transition: 0.1s;
+  box-shadow: 3px 3px 0 var(--textColor);
+}
+
+.add-task button:hover {
+  cursor: pointer;
+  background-color: var(--bgSecondary);
+  color: var(--textColor);
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--textColor);
+}
+
+.add-task button:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* Err Input Msg */
+
+.err-input-msg {
+  display: none;
+}
+
+.err-input-msg.active {
+  display: inline;
+  width: 100%;
+  margin: 1rem 0 -2rem 2rem;
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: italic;
+  text-align: left;
+}
+
+/* Task */
+
+.tasks-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem auto 0;
+}
+
+.tasks-container .task {
+  display: flex;
+  width: 100%;
+  max-width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  border: 3px solid var(--textColor);
+  border-radius: 10px;
+  background-color: lightyellow;
+  font-weight: 700;
+  color: var(--textColor);
+  transition: 0.3s;
+  box-shadow: 3px 3px 0 var(--textColor);
+}
+
+.tasks-container .task.checked {
+  text-decoration: line-through;
+}
+
+.tasks-container .task:hover {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.tasks-container .task span {
+  flex: 1;
+  margin-left: 1rem;
+  text-align: left;
+  font-size: 1.6rem;
+  max-width: 60%;
+  overflow-wrap: break-word;
+}
+
+.tasks-container .task input {
+  width: 35px;
+  height: 35px;
+}
+
+.task .edit-task {
+  cursor: pointer;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--textColor);
+  border-radius: 10%;
+  background-color: var(--bgSecondary);
+  transition: 0.1s;
+}
+
+.task .delete-task {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin-left: 0.5rem;
+  padding: 5px;
+  border: 1px solid var(--textColor);
+  border-radius: 10%;
+  background-color: var(--bgSecondary);
+  transition: 0.1s;
+}
+
+.task .edit-task:hover {
+  background-color: dodgerblue;
+  color: var(--bgSecondary);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 var(--textColor);
+}
+
+.task .delete-task:hover {
+  background-color: orangered;
+  color: var(--bgSecondary);
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 0 var(--textColor);
+}
+
+.task .edit-task:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+.task .delete-task:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1336px) {
+  :root {
+    font-size: 75%;
+  }
+
+  .container {
+    width: 70%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  :root {
+    font-size: 62%;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  :root {
+    font-size: 55%;
+  }
+
+  .tasks-container {
+    width: 140%;
+  }
+
+  .tasks-container .task input {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+  }
+
+  .task .edit-task {
+    margin-left: 0.5rem;
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+  }
+
+  .task .delete-task {
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+  }
+}

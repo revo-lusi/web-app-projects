@@ -1,0 +1,145 @@
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+#title {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+#input-range-form {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 3px solid black;
+  margin: 2rem auto 0;
+}
+
+#input-range-form > * {
+  width: 100%;
+  font-weight: 700;
+}
+
+#input-range-form label {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+  margin-top: 1rem;
+}
+
+#input-range-form input {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+#input-range-form button {
+  font-family: "Poppins", sans-serif;
+  width: 50%;
+  margin-top: 2em;
+  padding: 0.5em;
+  font-size: 1.5em;
+}
+
+/* Table */
+
+#tabel-matematika {
+  width: 100%;
+  height: 100%;
+  border-collapse: separate;
+  max-width: 70%;
+  max-height: 70vh;
+  margin: 3rem auto 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#tabel-matematika.activated {
+  border: 0.5px solid black;
+}
+
+#tabel-matematika.activated th,
+#tabel-matematika.activated td {
+  border: 1.5px solid black;
+  padding: 1.5px;
+}
+
+#tabel-matematika.activated td {
+  font-weight: 500;
+}
+
+#tabel-matematika th {
+  background-color: #555;
+  color: #eaeaea;
+}
+
+#tabel-matematika.print-mode {
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+/* Button */
+
+button {
+  color: black;
+  background-color: #fefefe;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin: 2rem 1.5rem 0;
+  padding: 0.5rem;
+}
+
+button:hover {
+  background-color: #010101;
+  color: #eaeaea;
+}
+
+.container-btn {
+  display: flex;
+  margin: auto;
+  width: 40%;
+}
+
+.container-btn button {
+  display: none;
+  flex: 1;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  :root {
+    font-size: 70%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  :root {
+    font-size: 60%;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  :root {
+    font-size: 50%;
+  }
+}

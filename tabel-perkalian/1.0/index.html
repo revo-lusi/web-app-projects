@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabel Perkalian Generator (v1.0)</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1 id="title">Tabel Perkalian Generator (v1.0)</h1>
+
+    <!-- Form -->
+    <form action="" method="post" id="input-range-form">
+      <label for="firstNum">Masukkan angka awal (1-30): </label>
+      <input
+        type="number"
+        name="firstNum"
+        min="1"
+        max="30"
+        id="firstNum"
+        maxlength="2"
+        autofocus
+        required
+      />
+      <label for="lastNum">Masukkan angka akhir (1-30): </label>
+      <input
+        type="number"
+        name="lastNum"
+        min="1"
+        max="30"
+        id="lastNum"
+        maxlength="2"
+        required
+      />
+
+      <button type="menu" id="submit" class="submit">Kirim!</button>
+    </form>
+
+    <!-- Table -->
+    <table id="tabel-matematika" cellspacing="0">
+      <thead id="thead"></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <!-- Buttons -->
+    <div class="container-btn">
+      <button class="restart" onclick="document.location.reload()">
+        Ulangi
+      </button>
+      <button class="print-btn">Print</button>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
