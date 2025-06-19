@@ -53,8 +53,15 @@ function createTable(firstNum, lastNum) {
 
 printBtn.addEventListener("click", function () {
   table.classList.add("print-mode");
-  document.getElementById("title").remove();
-  restartBtn.remove();
-  printBtn.remove();
+  document.getElementById("title").style.display = "none";
+  restartBtn.style.display = "none";
+  printBtn.style.display = "none";
   print();
+});
+
+window.addEventListener("afterprint", function (e) {
+  e.preventDefault();
+  document.getElementById("title").style.display = "block";
+  restartBtn.style.display = "block";
+  printBtn.style.display = "block";
 });

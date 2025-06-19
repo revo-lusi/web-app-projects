@@ -24,8 +24,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 60%;
-  margin: 40px auto;
+  max-width: 80%;
+  width: 100%;
+  margin: 40px auto 0;
   padding: 30px;
 }
 
@@ -41,7 +42,8 @@ body {
 .add-task {
   display: flex;
   justify-content: center;
-  width: 95%;
+  max-width: 95%;
+  width: 100%;
   height: 60px;
   color: var(--bg);
 }
@@ -104,18 +106,18 @@ body {
 
 .tasks-container {
   display: flex;
-  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
   margin: 2rem auto 0;
 }
 
 .tasks-container .task {
   display: flex;
-  width: 100%;
-  max-width: 85%;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 85%;
   margin: 1rem;
   padding: 1rem;
   border: 3px solid var(--textColor);
@@ -136,8 +138,16 @@ body {
   box-shadow: none;
 }
 
-.tasks-container .task span {
+.tasks-container .task input {
   flex: 1;
+  max-width: 35px;
+  max-height: 35px;
+  width: 100%;
+  height: 100%;
+}
+
+.tasks-container .task span {
+  flex: 10;
   margin-left: 1rem;
   text-align: left;
   font-size: 1.6rem;
@@ -145,19 +155,16 @@ body {
   overflow-wrap: break-word;
 }
 
-.tasks-container .task input {
-  width: 35px;
-  height: 35px;
-}
-
 .task .edit-task {
+  flex: 1;
   cursor: pointer;
-  display: flex;
-  width: 40px;
-  height: 40px;
+  text-align: center;
+  vertical-align: center;
+  max-width: 100px;
+  max-height: 40px;
+  width: 100%;
+  height: 100%;
   padding: 5px;
-  justify-content: center;
-  align-items: center;
   border: 1px solid var(--textColor);
   border-radius: 10%;
   background-color: var(--bgSecondary);
@@ -165,12 +172,14 @@ body {
 }
 
 .task .delete-task {
+  flex: 1;
   cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  width: 40px;
-  height: 40px;
+  text-align: center;
+  vertical-align: center;
+  max-width: 100px;
+  max-height: 40px;
+  width: 100%;
+  height: 100%;
   margin-left: 0.5rem;
   padding: 5px;
   border: 1px solid var(--textColor);
@@ -210,10 +219,6 @@ body {
   :root {
     font-size: 75%;
   }
-
-  .container {
-    width: 70%;
-  }
 }
 
 /* Tablet */
@@ -221,41 +226,47 @@ body {
   :root {
     font-size: 62%;
   }
-
-  .container {
-    width: 90%;
-  }
 }
 
 /* Mobile Phone */
 @media (max-width: 450px) {
-  :root {
-    font-size: 55%;
+  .container {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .add-task {
+    max-width: 100vw;
+    width: 100%;
+    height: 50px;
+  }
+
+  .add-task input {
+    padding: 5px 10px;
+    font-weight: 500;
+    box-shadow: 1.5px 1.5px 0 var(--textColor);
   }
 
   .tasks-container {
-    width: 140%;
+    width: 95vw;
   }
 
-  .tasks-container .task input {
-    min-width: 30px;
-    max-width: 30px;
-    min-height: 30px;
-    max-height: 30px;
+  .task > *:not(span) {
+    flex: 0.5;
+  }
+
+  .tasks-container .task {
+    max-width: inherit;
+    width: 100vw;
+    margin: 0.6rem;
+    padding: 0.7rem;
+    font-weight: 500;
+    border: 2px solid var(--textColor);
+    border-radius: 5px;
+    box-shadow: 1.5px 1.5px 0 var(--textColor);
   }
 
   .task .edit-task {
     margin-left: 0.5rem;
-    min-width: 30px;
-    max-width: 30px;
-    min-height: 30px;
-    max-height: 30px;
-  }
-
-  .task .delete-task {
-    min-width: 30px;
-    max-width: 30px;
-    min-height: 30px;
-    max-height: 30px;
   }
 }
